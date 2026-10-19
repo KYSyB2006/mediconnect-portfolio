@@ -434,6 +434,37 @@
     table.team td,table.team th:nth-child(3),table.team td:nth-child(3){display:block;padding:0;border:0;}
     table.team td:nth-child(3){margin-top:2px;font-size:14px;color:var(--text-dim);}
   }
+
+  /* ===== Critique du 19/10 : ordre, longueur, retours visuels ===== */
+  .reveal{opacity:1;transform:none;}
+  .to-top{display:none;}
+  .note{font-style:normal;}
+  .result-lead{margin:14px 0 6px;padding:14px 18px;border-radius:12px;background:var(--blue-soft);border:1px solid var(--blue-line);color:var(--text);font-size:16px;line-height:1.6;max-width:none;}
+  .result-lead b{color:var(--blue-dark);}
+  .fold{margin-top:18px;}
+  .fold>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:700;font-size:15px;color:var(--blue-dark);}
+  .fold>summary::-webkit-details-marker{display:none;}
+  .fold>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s var(--ease);}
+  .fold[open]>summary::after{transform:translateY(2px) rotate(-135deg);}
+  .fold .hd{display:none;}
+  .fold[open] .sh{display:none;}
+  .fold[open] .hd{display:inline;}
+  .fold>.code-block,.fold>.why{margin-top:8px;}
+  .case-shot{margin:22px 0 0;}
+  .case-shot:hover{transform:none;}
+  .shots-one{grid-template-columns:1fr;}
+  .shot figcaption a{display:inline;line-height:inherit;background:none;color:var(--blue);text-decoration:underline;}
+  .reports-cards{margin-top:18px;}
+  .tools-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:18px;}
+  .tools-label{font-family:var(--mono);font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:1.5px;}
+  .tools-row .chips{gap:8px;}
+  .tools-row .chip{font-size:14px;padding:6px 12px;}
+  @media (max-width:720px){
+    header.hero{padding:40px 0 36px;}
+    .eyebrow{margin-bottom:18px;}
+    h1.title{margin-bottom:16px;}
+    .lede{margin-bottom:22px;}
+  }
 </style>
 </head>
 <body>
@@ -447,11 +478,10 @@
     <div class="nav-right">
       <ul id="navLinks">
         <li><a href="#perimetre">Périmètre</a></li>
-        <li><a href="#recherche">Recherche & Géo</a></li>
-        <li><a href="#rdv">RDV & Disponibilités</a></li>
-        <li><a href="#dashboards">Dashboards</a></li>
-        <li><a href="#captures">Aperçu</a></li>
-        <li><a href="#stack">Stack</a></li>
+        <li><a href="#recherche">Recherche</a></li>
+        <li><a href="#rdv">Rendez-vous</a></li>
+        <li><a href="#rapports">Rapports</a></li>
+        <li><a href="#perspectives">Suite</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème" title="Changer de thème">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
@@ -469,22 +499,20 @@
   <div class="hero-aurora" aria-hidden="true"></div>
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="eyebrow">PROJET ACADÉMIQUE — WE4A · SI40 · WE4B</div>
+    <div class="eyebrow">PROJET ACADÉMIQUE — WE4A · SI40 · WE4B · 2026</div>
     <h1 class="title">Aider les patients à trouver un médecin disponible, et prouver la donnée derrière <span class="accent">chaque décision</span></h1>
     <p class="lede">
-      MediConnect est une plateforme de recherche et de prise de rendez-vous médicaux. Sur ce projet développé
-      en équipe, j'ai porté deux périmètres : la recherche géolocalisée de praticiens et la gestion des
-      disponibilités de rendez-vous — de la base de données jusqu'aux tableaux de bord Power BI.
+      Une plateforme de recherche et de prise de rendez-vous médicaux, développée à quatre. J'y ai porté
+      la recherche géolocalisée des praticiens et la gestion des disponibilités, de la base de données
+      jusqu'aux tableaux de bord Power BI.
     </p>
     <div class="meta-row">
       <span class="pill">Belva YONTA</span>
-      <span class="pill">yontabelva@gmail.com</span>
       <span class="pill">Étudiante — Data & Analytics</span>
-      <span class="pill">2026</span>
     </div>
     <div class="cta-row">
       <a class="btn primary" href="#recherche">Voir mes deux cas d'étude →</a>
-      <a class="btn ghost" href="#perimetre">Voir mon périmètre exact</a>
+      <a class="btn ghost" href="#rapports">Voir les rapports Power BI</a>
     </div>
   </div>
 </header>
@@ -510,6 +538,12 @@
       <div class="scale-note">
         Le jeu de données est celui du projet pédagogique : 200 recherches journalisées sur 6 mois, 49 praticiens répartis sur 7 villes. Suffisant pour valider le pipeline, les algorithmes et faire ressortir des tendances nettes, mais pas pour en tirer des conclusions statistiques à l'échelle nationale.
       </div>
+      <div class="tools-row">
+        <span class="tools-label">Outils</span>
+        <div class="chips">
+          <span class="chip">SQL (MySQL / MariaDB)</span><span class="chip">MongoDB</span><span class="chip">Power BI</span><span class="chip">Power Query M</span><span class="chip">PHP / PDO</span><span class="chip">API REST</span><span class="chip">Chart.js</span><span class="chip">Git</span><span class="chip">PHPUnit</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -521,12 +555,13 @@
     <p class="section-sub">Comment un patient trouve-t-il un médecin disponible près de chez lui, et comment le mesurer ?</p>
 
     <div class="case reveal">
-      <div class="case-kicker">Cas d'étude — méthode CAR</div>
       <h3>Trier les médecins par pertinence géographique, pas juste par nom</h3>
+      <p class="result-lead"><b>Résultat :</b> les deux spécialités les plus recherchées, dentiste et neurologue, ne comptent que 0 et 2 praticiens.</p>
 
       <div class="car-step">
         <div class="car-head"><span class="car-badge">C</span><span class="car-label">Contexte</span></div>
         <p class="problem">Sans distance calculée, un patient doit ouvrir chaque fiche pour savoir si un médecin est proche. Il fallait une recherche filtrable par spécialité et par rayon, avec la distance réelle affichée — et un moyen de vérifier que cette recherche répond vraiment au besoin.</p>
+        <p class="problem">Sur 6 mois, 200 recherches ont été journalisées : 83 % avec la position du patient, pour un rayon moyen de 20,2 km.</p>
       </div>
 
       <div class="car-step">
@@ -540,7 +575,9 @@
           <div class="flow-step"><div class="n">Restitution</div><p>Endpoint <code>/api/analytics/geo</code>, requêtes Power Query M, dashboard Power BI Géographie</p></div>
         </div>
 
-        <div class="code-block">
+        <details class="fold code-fold" open>
+          <summary><span class="sh">Voir le code SQL</span><span class="hd">Masquer le code</span></summary>
+          <div class="code-block">
           <div class="code-head">
             <span class="code-dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span>
             <span class="code-file">src/controllers/api/AnalyticsApiController.php</span>
@@ -556,7 +593,10 @@
 <span class="kw">GROUP BY</span> ville
 <span class="kw">ORDER BY</span> nb_medecins <span class="kw">DESC</span>;</pre>
         </div>
+        </details>
 
+        <details class="fold">
+          <summary><span class="sh">Voir le détail : endpoints livrés et qualité des données</span><span class="hd">Masquer le détail</span></summary>
         <div class="why">
           <b>Sur les 4 endpoints prévus au départ pour l'analytics (géo, recherches, spécialités, accès aux soins), 3 ont été livrés et branchés à Power BI</b> — <code>/api/analytics/geo</code>, <code>/recherches</code>, <code>/specialites</code>. Le 4e (accès aux soins par département) restait à l'état de requête Power Query préparée, non connectée côté API : un exemple concret d'arbitrage de fin de sprint plutôt qu'une fonctionnalité cachée.
         </div>
@@ -565,17 +605,11 @@
           <b>Qualité des données :</b> en travaillant sur l'export des pharmacies (recherchées dans ce même module), j'ai repéré des doublons de fiches — même pharmacie, deux <code>id</code> différents. Migration écrite pour réattribuer l'inventaire lié puis supprimer les doublons, avec une contrainte <code>UNIQUE</code> pour empêcher la récidive.
           <div class="code-cap" style="margin-top:8px;">database/migration_dedup_pharmacies.sql</div>
         </div>
+        </details>
       </div>
 
       <div class="car-step">
         <div class="car-head"><span class="car-badge">R</span><span class="car-label">Résultat</span></div>
-
-        <div class="kpi-row">
-          <div class="kpi"><span class="kpi-num">200</span><span class="kpi-lbl">recherches journalisées</span></div>
-          <div class="kpi"><span class="kpi-num">83 %</span><span class="kpi-lbl">avec géolocalisation</span></div>
-          <div class="kpi"><span class="kpi-num">20,2 km</span><span class="kpi-lbl">rayon moyen</span></div>
-          <div class="kpi"><span class="kpi-num">49</span><span class="kpi-lbl">praticiens référencés</span></div>
-        </div>
 
         <div class="insight">
           <div class="insight-head">Ce que les patients cherchent vs. ce que la plateforme propose</div>
@@ -603,6 +637,13 @@
             par rayon » du rapport confirme ce diagnostic du côté des échecs de recherche.
           </div>
         </div>
+
+        <figure class="shot case-shot">
+          <a href="images/powerbi-recherches.png" target="_blank" rel="noopener">
+            <img src="images/powerbi-recherches.png" width="2767" height="1600" alt="Rapport Power BI, page Activité et recherches : carte de densité médicale, top 10 des villes, évolution mensuelle des recherches, répartition par spécialité et couverture des spécialités par ville" loading="lazy" decoding="async">
+          </a>
+          <figcaption><b>Mon rapport Power BI, page Activité et recherches</b>Les spécialités les plus recherchées, la densité médicale par ville et l’évolution mensuelle. Touchez l’image pour l’ouvrir en grand.</figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -615,8 +656,8 @@
     <p class="section-sub">Une fois le bon médecin trouvé, encore faut-il savoir quels créneaux sont réellement libres.</p>
 
     <div class="case reveal">
-      <div class="case-kicker">Cas d'étude — méthode CAR</div>
       <h3>Un créneau "disponible" doit tenir compte de l'agenda réel du médecin</h3>
+      <p class="result-lead"><b>Résultat :</b> le patient ne voit que les créneaux encore libres, calculés à partir de trois sources de données.</p>
 
       <div class="car-step">
         <div class="car-head"><span class="car-badge">C</span><span class="car-label">Contexte</span></div>
@@ -626,7 +667,9 @@
       <div class="car-step">
         <div class="car-head"><span class="car-badge">A</span><span class="car-label">Action</span></div>
 
-        <div class="code-block">
+        <details class="fold code-fold" open>
+          <summary><span class="sh">Voir le code PHP</span><span class="hd">Masquer le code</span></summary>
+          <div class="code-block">
           <div class="code-head">
             <span class="code-dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span>
             <span class="code-file">src/models/RdvModel.php — creneauxDisponibles()</span>
@@ -648,10 +691,13 @@
     }
 }</pre>
         </div>
+        </details>
 
         <div class="why"><b>Pourquoi c'est une question de données, pas juste de code :</b> la disponibilité découle de trois sources croisées (horaires_semaine, rendez_vous, durée de consultation propre à chaque médecin) — traduire cette règle métier en requêtes fiables limite les doubles réservations, le problème numéro un d'un système de RDV.</div>
 
-        <div class="code-block">
+        <details class="fold code-fold">
+          <summary><span class="sh">Voir la requête d’export vers Power BI</span><span class="hd">Masquer la requête</span></summary>
+          <div class="code-block">
           <div class="code-head">
             <span class="code-dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span>
             <span class="code-file">scripts/export_powerbi.php</span>
@@ -666,6 +712,7 @@
 <span class="kw">GROUP BY</span> mois, medecin_nom, r.statut
 <span class="kw">ORDER BY</span> mois <span class="kw">ASC</span>, nb_rdv <span class="kw">DESC</span>; <span class="cm">-- alimente le dashboard Power BI Activité</span></pre>
         </div>
+        </details>
       </div>
 
       <div class="car-step">
@@ -680,93 +727,37 @@
   </div>
 </section>
 
-<section id="dashboards">
+<section id="rapports">
   <div class="wrap">
     <div class="section-tag">Restitution</div>
-    <h2>Les dashboards Power BI construits</h2>
-    <p class="section-sub">Pages et visuels réels des rapports, tels qu'enregistrés dans les fichiers .pbix du projet — plus le pipeline d'export partagé que j'ai mis en place pour toute l'équipe.</p>
+    <h2>Les rapports Power BI</h2>
+    <p class="section-sub">Le rapport Géographie que j’ai construit sur les données du projet, et le pipeline d’export que j’ai mis en place pour toute l’équipe.</p>
 
-    <div class="grid2">
-      <div class="dash-card reveal">
-        <h3>Géographie & recherche (P2)</h3>
-        <div class="sub">MediConnect_Geographie.pbix — 2 pages</div>
-        <ul class="viz-list">
-          <li><b>Activité & recherches</b> — carte de densité médicale, évolution mensuelle des recherches, couverture des spécialités par ville</li>
-          <li><b>Géographie & accès aux soins</b> — densité par département, spécialités non trouvées par rayon de recherche</li>
-        </ul>
-      </div>
-      <div class="dash-card reveal" style="transition-delay:.08s;">
-        <h3>KPI Stock, commandes, admin</h3>
-        <div class="sub">Mediconnect_Dashboard_P4.pbix — 3 pages</div>
-        <ul class="viz-list">
-          <li>Domaine P4 (inventaire/admin) — dashboard alimenté par le même pipeline d'export CSV et le même script de génération de template <code>.pbit</code> que j'ai construits pour l'équipe</li>
-        </ul>
-      </div>
-    </div>
-    <div class="code-cap" style="margin-top:14px;">scripts/export_powerbi.php et scripts/generate_pbit.php</div>
-  </div>
-</section>
-
-<section id="captures">
-  <div class="wrap">
-    <div class="section-tag">Aperçu</div>
-    <h2>Les rapports en images</h2>
-    <p class="section-sub">Le rapport Power BI Géographie que j'ai construit, sur ses deux pages, connecté aux données du projet.</p>
-
-    <div class="shots reveal" id="shots">
-      <figure class="shot" data-shot>
-        <a href="images/powerbi-recherches.png" target="_blank" rel="noopener">
-          <img src="images/powerbi-recherches.png" alt="Rapport Power BI, page Activité et recherches : carte de densité médicale, top 10 des villes, évolution mensuelle des recherches, répartition par spécialité et couverture des spécialités par ville" loading="lazy" decoding="async">
-        </a>
-        <figcaption><b>Activité &amp; recherches</b>Carte de densité, top villes, évolution mensuelle, répartition et couverture des spécialités. KPIs : 200 recherches, 83 % géolocalisées, rayon moyen 20,2 km.</figcaption>
-      </figure>
-
+    <div class="shots shots-one" id="shots">
       <figure class="shot" data-shot>
         <a href="images/powerbi-geographie.png" target="_blank" rel="noopener">
-          <img src="images/powerbi-geographie.png" alt="Rapport Power BI, page Géographie et accès aux soins : densité médicale par département, top 10 des recherches, patients et médecins par ville, spécialités non trouvées par rayon" loading="lazy" decoding="async">
+          <img src="images/powerbi-geographie.png" width="2767" height="1600" alt="Rapport Power BI, page Géographie et accès aux soins : densité médicale par département, top 10 des recherches, patients et médecins par ville, spécialités non trouvées par rayon" loading="lazy" decoding="async">
         </a>
-        <figcaption><b>Géographie &amp; accès aux soins</b>Densité par département, patients vs médecins par ville, spécialités non trouvées selon le rayon, corrélation recherches / rendez-vous sur 6 mois.</figcaption>
+        <figcaption><b>Géographie &amp; accès aux soins</b>Densité par département, patients et médecins par ville, spécialités non trouvées selon le rayon, corrélation recherches / rendez-vous sur 6 mois. La page Activité et recherches est présentée dans le <a href="#recherche">Cas 1</a>.</figcaption>
       </figure>
     </div>
+    <div class="shots-empty" id="shotsEmpty" hidden><b>Capture manquante.</b> L’image attendue est <code>images/powerbi-geographie.png</code>.</div>
 
-    <div class="shots-empty" id="shotsEmpty" hidden>
-      <b>Captures manquantes.</b> Les images attendues sont <code>images/powerbi-recherches.png</code> et
-      <code>images/powerbi-geographie.png</code>. Cette section réapparaît automatiquement dès qu'au moins
-      l'une des deux est présente dans le dépôt.
-    </div>
-  </div>
-</section>
-
-<section id="stack">
-  <div class="wrap">
-    <div class="section-tag">Outils</div>
-    <h2>Stack technique</h2>
-    <div class="stack-groups reveal">
-      <div class="stack-group">
-        <div class="label">Données & requêtage</div>
-        <div class="chips">
-          <span class="chip">SQL (MySQL / MariaDB)</span>
-          <span class="chip">Migrations de schéma</span>
-          <span class="chip">MongoDB</span>
-          <span class="chip">CSV / ETL</span>
-        </div>
+    <div class="grid2 reports-cards">
+      <div class="dash-card">
+        <h3>Géographie &amp; recherche (P2)</h3>
+        <div class="sub">MediConnect_Geographie.pbix — 2 pages</div>
+        <ul class="viz-list">
+          <li><b>Activité &amp; recherches</b> — carte de densité médicale, évolution mensuelle des recherches, couverture des spécialités par ville</li>
+          <li><b>Géographie &amp; accès aux soins</b> — densité par département, spécialités non trouvées par rayon de recherche</li>
+        </ul>
       </div>
-      <div class="stack-group">
-        <div class="label">Visualisation & BI</div>
-        <div class="chips">
-          <span class="chip">Power BI</span>
-          <span class="chip">Power Query M</span>
-          <span class="chip">Chart.js</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <div class="label">Autour de la donnée</div>
-        <div class="chips">
-          <span class="chip">PHP / PDO</span>
-          <span class="chip">API REST</span>
-          <span class="chip">Git</span>
-          <span class="chip">PHPUnit</span>
-        </div>
+      <div class="dash-card">
+        <h3>Pipeline d’export partagé</h3>
+        <div class="sub">export_powerbi.php · generate_pbit.php</div>
+        <ul class="viz-list">
+          <li>Un export CSV commun et un script qui génère le modèle <code>.pbit</code>, que j’ai construits pour l’équipe. Le dashboard du périmètre P4 (stock, commandes, administration, 3 pages) repose dessus.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -792,7 +783,7 @@
 <footer>
   <div class="wrap">
     <p>MediConnect — projet académique WE4A / SI40 / WE4B, développé en équipe de 4 · Belva YONTA (P2 + P3) · yontabelva@gmail.com</p>
-    <p class="note">Chaque affirmation technique de cette page cite le fichier source exact du dépôt (privé) au 13/07/2026.</p>
+    <p class="note">Les extraits de code viennent du dépôt du projet, privé, dans son état du 13/07/2026.</p>
   </div>
 </footer>
 
@@ -809,6 +800,10 @@
     if(next === 'dark'){ root.setAttribute('data-theme','dark'); } else { root.removeAttribute('data-theme'); }
     localStorage.setItem('mc-theme', next);
   });
+
+  if(window.matchMedia && window.matchMedia('(max-width: 720px)').matches){
+    document.querySelectorAll('details.code-fold').forEach(function(d){ d.open = false; });
+  }
 
   var navToggle = document.getElementById('navToggle');
   var navLinksEl = document.getElementById('navLinks');
