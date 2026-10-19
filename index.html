@@ -64,14 +64,14 @@ h4{font-weight:600;font-size:18px}
 .toc a.on{color:var(--ink);box-shadow:inset 0 -3px 0 var(--brand)}
 .toc-wrap::after{content:"";position:absolute;right:0;top:0;bottom:0;width:36px;background:linear-gradient(to right,rgba(255,255,255,0),#fff);pointer-events:none;opacity:0;transition:opacity .2s}
 .toc-wrap.has-more::after{opacity:1}
-.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--brand)}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--offer)}
 
 /* Accroche */
 .hero{background:linear-gradient(180deg,#EEF3FA 0%,var(--bg) 100%);color:var(--ink);padding:56px 0 52px;border-bottom:var(--edge)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:56px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:56px;align-items:center}
 .status{display:inline-block;margin:0 0 16px;padding:4px 12px;border-radius:999px;background:var(--brand-soft);color:var(--brand-dark);font-size:14px;font-weight:700}
 .hero h1{color:var(--ink);font-weight:700;font-size:clamp(32px,3.4vw,46px);line-height:1.12;letter-spacing:-.01em;max-width:18ch}
-.lede{margin:16px 0 0;max-width:31rem;font-size:18px;color:var(--muted)}
+.lede{margin:16px 0 0;max-width:34rem;font-size:18px;color:var(--muted)}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:600;border:1px solid transparent}
 .btn-main{background:var(--brand);color:#fff}.btn-main:hover{background:var(--brand-dark);color:#fff}
@@ -124,7 +124,7 @@ section+section{border-top:var(--edge)}
 .code{margin:6px 0 16px;border:var(--edge);border-radius:14px;background:#fff;overflow:hidden}
 .code figcaption{padding:8px 14px;border-bottom:var(--edge);font-size:14px;color:var(--muted);overflow-wrap:anywhere}
 .code pre{margin:0;padding:14px 16px;overflow-x:auto;font-family:var(--mono);font-size:14px;line-height:1.55;color:var(--ink);tab-size:4}
-.code pre{color:var(--muted)}.code .k{color:var(--ink)}.code .s{color:#7A4E00}.code .c{color:var(--faint)}
+.code .k{color:var(--brand)}.code .s{color:var(--offer)}.code .c{color:var(--faint)}
 .callout{margin:16px 0 0;padding:16px 18px;border-radius:14px;background:var(--brand-soft);color:var(--text)}
 .callout b{color:var(--ink)}
 .note{margin:12px 0 0;padding:14px 18px;border-radius:14px;background:var(--note);color:var(--text)}
@@ -267,7 +267,7 @@ footer p+p{margin-top:4px}
 <section class="hero" aria-label="Présentation">
   <div class="wrap">
     <div>
-      <p class="status">Projet d’équipe · 2026</p>
+      <p class="status">Projet d’équipe · WE4A, SI40, WE4B · 2026</p>
       <h1>Aider les patients à trouver un médecin disponible</h1>
       <p class="lede">Une plateforme de recherche et de prise de rendez-vous médicaux, développée à quatre. J’y ai porté la recherche géolocalisée des praticiens et le calcul des disponibilités, de la base de données jusqu’aux tableaux de bord Power BI.</p>
       <div class="cta">
@@ -276,8 +276,8 @@ footer p+p{margin-top:4px}
       </div>
     </div>
     <figure class="hero-shot">
-      <button type="button" data-zoom="images/powerbi-recherches.png" data-caption="Rapport Power BI Géographie, page Activité et recherches" aria-label="Voir le rapport Power BI complet"><img src="images/powerbi-zoom.webp" width="878" height="672" decoding="async" alt="Extrait du rapport Power BI : 200 recherches au total, et les spécialités les plus recherchées, dentiste et neurologue en tête avec 24 recherches chacune"></button>
-      <figcaption>Extrait de mon rapport Power BI. Touchez l’image pour voir le rapport complet.</figcaption>
+      <button type="button" data-zoom="images/powerbi-recherches.png" data-caption="Rapport Power BI Géographie, page Activité et recherches" aria-label="Agrandir le rapport Power BI Activité et recherches"><img src="images/powerbi-recherches.png" width="2767" height="1600" decoding="async" alt="Rapport Power BI, page Activité et recherches : carte de densité médicale, top 10 des villes, évolution mensuelle des recherches, répartition par spécialité et couverture des spécialités par ville"></button>
+      <figcaption>Mon rapport Power BI, page Activité et recherches</figcaption>
     </figure>
   </div>
 </section>
