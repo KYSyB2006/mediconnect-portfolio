@@ -6,7 +6,7 @@
 <title>MediConnect — étude de cas Data &amp; Analytics | Belva YONTA</title>
 <meta name="description" content="Étude de cas data sur MediConnect, plateforme de rendez-vous médicaux : recherche géolocalisée (Haversine, API BAN), calcul de créneaux, pipeline MySQL et MongoDB vers Power BI.">
 <meta name="author" content="Belva YONTA">
-<meta name="theme-color" content="#1C56A8">
+<meta name="theme-color" content="#F5F8FC">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MediConnect — étude de cas Data &amp; Analytics">
 <meta property="og:description" content="Recherche géolocalisée de praticiens et gestion des disponibilités : de la base de données jusqu’aux tableaux de bord Power BI.">
@@ -67,20 +67,20 @@ h4{font-weight:600;font-size:18px}
 .progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--offer)}
 
 /* Accroche */
-.hero{background:var(--brand);color:#fff;padding:56px 0 52px}
+.hero{background:linear-gradient(180deg,#EEF3FA 0%,var(--bg) 100%);color:var(--ink);padding:56px 0 52px;border-bottom:var(--edge)}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:56px;align-items:center}
-.status{display:inline-block;margin:0 0 16px;padding:4px 12px;border-radius:999px;background:#fff;color:var(--brand-dark);font-size:14px;font-weight:700}
-.hero h1{color:#fff;font-weight:700;font-size:clamp(32px,3.4vw,46px);line-height:1.12;letter-spacing:-.01em;max-width:18ch}
-.lede{margin:16px 0 0;max-width:34rem;font-size:18px;color:#fff}
+.status{display:inline-block;margin:0 0 16px;padding:4px 12px;border-radius:999px;background:var(--brand-soft);color:var(--brand-dark);font-size:14px;font-weight:700}
+.hero h1{color:var(--ink);font-weight:700;font-size:clamp(32px,3.4vw,46px);line-height:1.12;letter-spacing:-.01em;max-width:18ch}
+.lede{margin:16px 0 0;max-width:34rem;font-size:18px;color:var(--muted)}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:600;border:1px solid transparent}
-.btn-main{background:#fff;color:var(--ink)}.btn-main:hover{background:var(--brand-soft);color:var(--ink)}
-.btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}.btn-line:hover{color:#fff;border-color:#fff}
+.btn-main{background:var(--brand);color:#fff}.btn-main:hover{background:var(--brand-dark);color:#fff}
+.btn-line{background:#fff;color:var(--ink);border-color:var(--line-strong)}.btn-line:hover{color:var(--ink);border-color:var(--ink)}
 .btn-plain{background:#fff;color:var(--ink);border-color:var(--line-strong)}.btn-plain:hover{border-color:var(--ink);color:var(--ink)}
 .hero-shot{margin:0}
-.hero-shot button{display:block;width:100%;padding:0;border:0;border-radius:16px;background:#fff;cursor:zoom-in;box-shadow:0 24px 48px -18px rgba(0,0,0,.45);overflow:hidden}
+.hero-shot button{display:block;width:100%;padding:0;border:0;border-radius:16px;background:#fff;cursor:zoom-in;border:var(--edge);box-shadow:0 18px 40px -24px rgba(14,42,77,.35);overflow:hidden}
 .hero-shot img{display:block;width:100%;height:auto}
-.hero-shot figcaption{margin-top:12px;font-size:14px;color:#fff}
+.hero-shot figcaption{margin-top:12px;font-size:14px;color:var(--muted)}
 
 /* Sections */
 section{padding:56px 0}
