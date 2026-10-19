@@ -39,7 +39,7 @@ a{color:var(--brand-dark)}a:hover{color:var(--ink)}
 img{max-width:100%}
 code{font-family:var(--mono);font-size:.875em;background:var(--soft);padding:1px 6px;border-radius:6px;overflow-wrap:anywhere}
 ::selection{background:var(--brand-soft)}
-figcaption code,.file code,.cap code,.flow code{font-size:1em}
+figcaption code,.file code,.cap code,.flow code,.team code{font-size:1em}
 .report p{max-width:34rem}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
@@ -64,14 +64,14 @@ h4{font-weight:600;font-size:18px}
 .toc a.on{color:var(--ink);box-shadow:inset 0 -3px 0 var(--brand)}
 .toc-wrap::after{content:"";position:absolute;right:0;top:0;bottom:0;width:36px;background:linear-gradient(to right,rgba(255,255,255,0),#fff);pointer-events:none;opacity:0;transition:opacity .2s}
 .toc-wrap.has-more::after{opacity:1}
-.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--offer)}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--brand)}
 
 /* Accroche */
 .hero{background:linear-gradient(180deg,#EEF3FA 0%,var(--bg) 100%);color:var(--ink);padding:56px 0 52px;border-bottom:var(--edge)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:56px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:56px;align-items:center}
 .status{display:inline-block;margin:0 0 16px;padding:4px 12px;border-radius:999px;background:var(--brand-soft);color:var(--brand-dark);font-size:14px;font-weight:700}
 .hero h1{color:var(--ink);font-weight:700;font-size:clamp(32px,3.4vw,46px);line-height:1.12;letter-spacing:-.01em;max-width:18ch}
-.lede{margin:16px 0 0;max-width:34rem;font-size:18px;color:var(--muted)}
+.lede{margin:16px 0 0;max-width:31rem;font-size:18px;color:var(--muted)}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:600;border:1px solid transparent}
 .btn-main{background:var(--brand);color:#fff}.btn-main:hover{background:var(--brand-dark);color:#fff}
@@ -87,7 +87,7 @@ section{padding:56px 0}
 section+section{border-top:var(--edge)}
 .band{background:#fff}
 .over{margin:0 0 6px;font-size:16px;font-weight:600;color:var(--brand-dark)}
-.sub{margin:10px 0 0;max-width:36rem;color:var(--muted);font-size:18px}
+.sub{margin:10px 0 0;max-width:32rem;color:var(--muted);font-size:18px}
 .card{margin-top:28px;background:#fff;border:var(--edge);border-radius:20px;padding:32px}
 .band .card{background:var(--bg)}
 
@@ -124,7 +124,7 @@ section+section{border-top:var(--edge)}
 .code{margin:6px 0 16px;border:var(--edge);border-radius:14px;background:#fff;overflow:hidden}
 .code figcaption{padding:8px 14px;border-bottom:var(--edge);font-size:14px;color:var(--muted);overflow-wrap:anywhere}
 .code pre{margin:0;padding:14px 16px;overflow-x:auto;font-family:var(--mono);font-size:14px;line-height:1.55;color:var(--ink);tab-size:4}
-.code .k{color:var(--brand)}.code .s{color:var(--offer)}.code .c{color:var(--faint)}
+.code pre{color:var(--muted)}.code .k{color:var(--ink)}.code .s{color:#7A4E00}.code .c{color:var(--faint)}
 .callout{margin:16px 0 0;padding:16px 18px;border-radius:14px;background:var(--brand-soft);color:var(--text)}
 .callout b{color:var(--ink)}
 .note{margin:12px 0 0;padding:14px 18px;border-radius:14px;background:var(--note);color:var(--text)}
@@ -146,7 +146,7 @@ section+section{border-top:var(--edge)}
 .pair:first-of-type{border-top:0}
 .pair .name{font-weight:600;color:var(--ink)}
 .pair .bars{display:grid;gap:4px}
-.pair .row{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
+.pair .row{display:grid;grid-template-columns:minmax(0,1fr) 32px;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
 .pair .track{height:10px;border-radius:999px;background:var(--soft);overflow:hidden}
 .pair .fill{display:block;height:100%;border-radius:999px}
 .d{background:var(--brand)}.o{background:var(--offer)}
@@ -169,12 +169,12 @@ section+section{border-top:var(--edge)}
 .more-body{padding-top:6px}
 
 /* Rapports */
-.reports{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;margin-top:28px}
+.reports{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
 .report{border:var(--edge);border-radius:20px;background:var(--bg);padding:24px}
 .report .file{margin:4px 0 14px;font-size:14px;color:var(--muted);overflow-wrap:anywhere}
 .report ul{margin:0;padding-left:20px;color:var(--text)}
 .report li{margin-bottom:8px}
-.thumbs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.thumbs{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
 .thumbs .fig{margin:0}
 .next{margin:20px 0 0;padding-left:20px;max-width:36rem}
 .next li{margin-bottom:10px;color:var(--text)}
@@ -191,6 +191,23 @@ footer p+p{margin-top:4px}
 .lightbox img{display:block;max-width:min(1400px,96vw);max-height:84vh;width:auto;height:auto;border-radius:12px;background:#fff}
 .lightbox p{margin:10px 0 0;color:#fff;text-align:center}
 .lightbox .close{position:absolute;top:-56px;right:0;width:44px;height:44px;border-radius:999px;border:0;background:#fff;color:var(--ink);font-size:22px;cursor:pointer}
+
+/* Corrections de la critique */
+.result-lead{margin:8px 0 18px;padding:14px 18px;border-radius:14px;background:#fff;border:var(--edge);color:var(--text);max-width:none}
+.band .result-lead{background:#fff}
+.callout p{margin:0;max-width:34rem}
+.callout p+p{margin-top:10px}
+.code-wrap{margin:6px 0 16px}
+.code-wrap>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:600;color:var(--ink)}
+.code-wrap>summary::-webkit-details-marker{display:none}
+.code-wrap>summary::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.code-wrap[open]>summary::after{transform:translateY(2px) rotate(-135deg)}
+.code-wrap .hd{display:none}
+.code-wrap[open] .sh{display:none}
+.code-wrap[open] .hd{display:inline}
+.code-wrap .code{margin:4px 0 0}
+.report-side p{margin:0;max-width:none}
+.report-side .file{margin:4px 0 8px}
 
 /* Responsive */
 @media (max-width:960px){
@@ -213,11 +230,15 @@ footer p+p{margin-top:4px}
   .flow{grid-template-columns:1fr}
   .stats b{font-size:24px}
   .pair{grid-template-columns:1fr}
-  .pair .row{grid-template-columns:minmax(0,1fr) 104px}
-  .team th:nth-child(3),.team td:nth-child(3){display:none}
+  .team thead{display:none}
+  .team tr{display:block;padding:12px 10px;border-bottom:var(--edge)}
+  .team tr:last-child{border-bottom:0}
+  .team td{display:block;padding:0;border:0;background:transparent!important}
+  .team tr.mine{background:var(--brand-soft)}
+  .team td:first-child{font-weight:700;color:var(--ink)}
+  .team td:nth-child(3){margin-top:2px;font-size:14px;color:var(--muted)}
   .tools{grid-template-columns:1fr;gap:0}
   .tools dd{margin-bottom:8px}
-  .thumbs{grid-template-columns:1fr}
   .chart{padding:16px}
 }
 </style>
@@ -231,10 +252,10 @@ footer p+p{margin-top:4px}
     <nav class="toc-wrap" aria-label="Sections de l’étude de cas">
       <div class="toc">
         <a href="#projet">Projet</a>
-        <a href="#recherche">Rechercher</a>
-        <a href="#rdv">Réserver</a>
-        <a href="#rapports">Restituer</a>
-        <a href="#suite">Améliorer</a>
+        <a href="#recherche">Recherche</a>
+        <a href="#rdv">Rendez-vous</a>
+        <a href="#rapports">Rapports</a>
+        <a href="#suite">Suite</a>
       </div>
     </nav>
   </div>
@@ -246,7 +267,7 @@ footer p+p{margin-top:4px}
 <section class="hero" aria-label="Présentation">
   <div class="wrap">
     <div>
-      <p class="status">Projet d’équipe · WE4A, SI40, WE4B · 2026</p>
+      <p class="status">Projet d’équipe · 2026</p>
       <h1>Aider les patients à trouver un médecin disponible</h1>
       <p class="lede">Une plateforme de recherche et de prise de rendez-vous médicaux, développée à quatre. J’y ai porté la recherche géolocalisée des praticiens et le calcul des disponibilités, de la base de données jusqu’aux tableaux de bord Power BI.</p>
       <div class="cta">
@@ -255,8 +276,8 @@ footer p+p{margin-top:4px}
       </div>
     </div>
     <figure class="hero-shot">
-      <button type="button" data-zoom="images/powerbi-recherches.png" data-caption="Rapport Power BI Géographie, page Activité et recherches" aria-label="Agrandir le rapport Power BI Activité et recherches"><img src="images/powerbi-recherches.png" width="2767" height="1600" decoding="async" alt="Rapport Power BI, page Activité et recherches : carte de densité médicale, top 10 des villes, évolution mensuelle des recherches, répartition par spécialité et couverture des spécialités par ville"></button>
-      <figcaption>Mon rapport Power BI, page Activité et recherches</figcaption>
+      <button type="button" data-zoom="images/powerbi-recherches.png" data-caption="Rapport Power BI Géographie, page Activité et recherches" aria-label="Voir le rapport Power BI complet"><img src="images/powerbi-zoom.webp" width="878" height="672" decoding="async" alt="Extrait du rapport Power BI : 200 recherches au total, et les spécialités les plus recherchées, dentiste et neurologue en tête avec 24 recherches chacune"></button>
+      <figcaption>Extrait de mon rapport Power BI. Touchez l’image pour voir le rapport complet.</figcaption>
     </figure>
   </div>
 </section>
@@ -298,12 +319,14 @@ footer p+p{margin-top:4px}
 
     <article class="card">
       <h3 class="case-title">Trier les médecins par proximité, pas seulement par nom</h3>
+      <p class="result-lead"><b>Résultat :</b> les deux spécialités les plus recherchées, dentiste et neurologue, ne comptent que 0 et 2 praticiens.</p>
 
       <div class="step">
         <span class="dot" aria-hidden="true"></span>
         <div>
           <p class="step-label">Contexte</p>
           <p>Sans distance calculée, un patient doit ouvrir chaque fiche pour savoir si un médecin est proche. Il fallait une recherche filtrable par spécialité et par rayon, avec la distance réelle affichée, et un moyen de vérifier que cette recherche répond au besoin.</p>
+          <p>Sur 6 mois, 200 recherches ont été journalisées : 83 % avec la position du patient, pour un rayon moyen de 20,2 km.</p>
         </div>
       </div>
 
@@ -316,7 +339,9 @@ footer p+p{margin-top:4px}
             <li><b>Traitement</b>Distance par la formule de Haversine, géocodage des adresses par l’API BAN (gouv.fr), avec Nominatim en secours</li>
             <li><b>Restitution</b>Endpoint <code>/api/analytics/geo</code>, requêtes Power Query M, dashboard Power BI Géographie</li>
           </ol>
-          <figure class="code">
+          <details class="code-wrap" open>
+            <summary><span class="sh">Voir le code</span><span class="hd">Masquer le code</span></summary>
+            <figure class="code">
             <figcaption>Médecins actifs et spécialités par ville · <code>AnalyticsApiController.php</code></figcaption>
             <pre tabindex="0" aria-label="Requête SQL"><span class="k">SELECT</span>
     <span class="k">COALESCE</span>(<span class="k">NULLIF</span>(<span class="k">TRIM</span>(u.ville), <span class="s">''</span>), <span class="s">'Inconnu'</span>) <span class="k">AS</span> ville,
@@ -328,6 +353,7 @@ footer p+p{margin-top:4px}
 <span class="k">GROUP BY</span> ville
 <span class="k">ORDER BY</span> nb_medecins <span class="k">DESC</span>;</pre>
           </figure>
+          </details>
           <details class="more">
             <summary>Voir le détail : endpoints livrés et qualité des données</summary>
             <div class="more-body">
@@ -342,47 +368,36 @@ footer p+p{margin-top:4px}
         <span class="dot" aria-hidden="true"></span>
         <div>
           <p class="step-label">Résultat</p>
-          <ul class="stats">
-            <li><b>200</b>recherches journalisées</li>
-            <li><b>83 %</b>géolocalisées</li>
-            <li><b>20,2 km</b>de rayon moyen</li>
-            <li><b>49</b>praticiens référencés</li>
-          </ul>
-
           <figure class="chart">
             <h4>Ce que les patients cherchent, et ce que la plateforme propose</h4>
-            <p class="cap">6 spécialités, même échelle · recherches : <code>search_logs</code> (MongoDB) · praticiens : référentiel MySQL · 6 mois</p>
+            <p class="cap">6 spécialités, même échelle de 0 à 24 · recherches : <code>search_logs</code> (MongoDB) · praticiens : référentiel MySQL · 6 mois</p>
             <ul class="key">
-              <li><i class="d" aria-hidden="true"></i>Recherches de patients</li>
-              <li><i class="o" aria-hidden="true"></i>Praticiens disponibles</li>
+              <li><i class="d" aria-hidden="true"></i>Nombre de recherches</li>
+              <li><i class="o" aria-hidden="true"></i>Nombre de praticiens</li>
             </ul>
             <div class="pair gap"><span class="name">Dentiste</span><div class="bars">
-              <div class="row"><span class="track"><span class="fill d" style="width:100%"></span></span><span>24 recherches</span></div>
-              <div class="row"><span class="track"><span class="fill o" style="width:0%"></span></span><span class="zero">0 praticien</span></div></div></div>
+              <div class="row"><span class="track"><span class="fill d" style="width:100%"></span></span><span>24</span></div>
+              <div class="row"><span class="track"><span class="fill o" style="width:0%"></span></span><span class="zero">0</span></div></div></div>
             <div class="pair"><span class="name">Neurologue</span><div class="bars">
-              <div class="row"><span class="track"><span class="fill d" style="width:100%"></span></span><span>24 recherches</span></div>
-              <div class="row"><span class="track"><span class="fill o" style="width:8.3%"></span></span><span>2 praticiens</span></div></div></div>
+              <div class="row"><span class="track"><span class="fill d" style="width:100%"></span></span><span>24</span></div>
+              <div class="row"><span class="track"><span class="fill o" style="width:8.3%"></span></span><span>2</span></div></div></div>
             <div class="pair"><span class="name">Gynécologue</span><div class="bars">
-              <div class="row"><span class="track"><span class="fill d" style="width:87.5%"></span></span><span>21 recherches</span></div>
-              <div class="row"><span class="track"><span class="fill o" style="width:25%"></span></span><span>6 praticiens</span></div></div></div>
+              <div class="row"><span class="track"><span class="fill d" style="width:87.5%"></span></span><span>21</span></div>
+              <div class="row"><span class="track"><span class="fill o" style="width:25%"></span></span><span>6</span></div></div></div>
             <div class="pair"><span class="name">Cardiologue</span><div class="bars">
-              <div class="row"><span class="track"><span class="fill d" style="width:83.3%"></span></span><span>20 recherches</span></div>
-              <div class="row"><span class="track"><span class="fill o" style="width:29.2%"></span></span><span>7 praticiens</span></div></div></div>
+              <div class="row"><span class="track"><span class="fill d" style="width:83.3%"></span></span><span>20</span></div>
+              <div class="row"><span class="track"><span class="fill o" style="width:29.2%"></span></span><span>7</span></div></div></div>
             <div class="pair gap"><span class="name">Kinésithérapeute</span><div class="bars">
-              <div class="row"><span class="track"><span class="fill d" style="width:83.3%"></span></span><span>20 recherches</span></div>
-              <div class="row"><span class="track"><span class="fill o" style="width:0%"></span></span><span class="zero">0 praticien</span></div></div></div>
+              <div class="row"><span class="track"><span class="fill d" style="width:83.3%"></span></span><span>20</span></div>
+              <div class="row"><span class="track"><span class="fill o" style="width:0%"></span></span><span class="zero">0</span></div></div></div>
             <div class="pair"><span class="name">Généraliste</span><div class="bars">
-              <div class="row"><span class="track"><span class="fill d" style="width:58.3%"></span></span><span>14 recherches</span></div>
-              <div class="row"><span class="track"><span class="fill o" style="width:70.8%"></span></span><span>17 praticiens</span></div></div></div>
+              <div class="row"><span class="track"><span class="fill d" style="width:58.3%"></span></span><span>14</span></div>
+              <div class="row"><span class="track"><span class="fill o" style="width:70.8%"></span></span><span>17</span></div></div></div>
           </figure>
 
-          <div class="callout"><b>Les deux spécialités les plus recherchées, dentiste et neurologue, comptent 0 et 2 praticiens.</b> Le kinésithérapeute est lui aussi absent du référentiel. À l’inverse, la médecine générale concentre 17 des 49 praticiens (35 % de l’offre) pour 14 recherches.</div>
-          <p class="note"><b>Recommandation :</b> ouvrir le référentiel aux spécialités absentes (dentiste, kinésithérapeute, rhumatologue) avant d’élargir le recrutement de généralistes. Le visuel « spécialités non trouvées par rayon » du rapport confirme ce diagnostic du côté des recherches sans résultat.</p>
+          <div class="callout"><p>Le kinésithérapeute, 5<sup>e</sup> spécialité la plus recherchée, est lui aussi absent du référentiel. À l’inverse, la médecine générale concentre 17 des 49 praticiens (35 % de l’offre) pour 14 recherches.</p>
+          <p><b>Recommandation :</b> ouvrir le référentiel aux spécialités absentes (dentiste, kinésithérapeute, rhumatologue) avant d’élargir le recrutement de généralistes. Le visuel « spécialités non trouvées par rayon » du rapport confirme ce diagnostic du côté des recherches sans résultat.</p></div>
 
-          <figure class="fig">
-            <button type="button" data-zoom="images/powerbi-geographie.png" data-caption="Rapport Power BI Géographie, page Géographie et accès aux soins" aria-label="Agrandir le rapport Power BI Géographie et accès aux soins"><img src="images/powerbi-geographie.png" width="2767" height="1600" loading="lazy" decoding="async" alt="Rapport Power BI, page Géographie et accès aux soins : densité médicale par département, top 10 des recherches, patients et médecins par ville, spécialités non trouvées par rayon"></button>
-            <figcaption><b>Géographie et accès aux soins.</b> Densité par département, patients et médecins par ville, spécialités non trouvées selon le rayon de recherche.</figcaption>
-          </figure>
         </div>
       </div>
     </article>
@@ -397,6 +412,7 @@ footer p+p{margin-top:4px}
 
     <article class="card">
       <h3 class="case-title">Un créneau « disponible » doit tenir compte de l’agenda réel du médecin</h3>
+      <p class="result-lead"><b>Résultat :</b> le patient ne voit que les créneaux encore libres, calculés à partir de trois sources de données.</p>
 
       <div class="step">
         <span class="dot" aria-hidden="true"></span>
@@ -411,7 +427,9 @@ footer p+p{margin-top:4px}
         <div>
           <p class="step-label">Action</p>
           <p>La disponibilité croise trois sources : les horaires de la semaine, les rendez-vous existants et la durée de consultation propre à chaque médecin. J’ai traduit cette règle métier en un calcul de créneaux.</p>
-          <figure class="code">
+          <details class="code-wrap" open>
+            <summary><span class="sh">Voir le code</span><span class="hd">Masquer le code</span></summary>
+            <figure class="code">
             <figcaption>Créneaux d’une journée : horaires moins rendez-vous pris · <code>RdvModel.php</code></figcaption>
             <pre tabindex="0" aria-label="Code PHP"><span class="k">foreach</span> ($horaires <span class="k">as</span> $h) {
     $debut = strtotime($date . <span class="s">' '</span> . $h[<span class="s">'heure_debut'</span>]);
@@ -428,6 +446,7 @@ footer p+p{margin-top:4px}
     }
 }</pre>
           </figure>
+          </details>
         </div>
       </div>
 
@@ -464,25 +483,25 @@ footer p+p{margin-top:4px}
     <h2>Les rapports Power BI</h2>
     <p class="sub">Les rapports construits sur les données du projet, et le pipeline d’export que j’ai mis en place pour toute l’équipe.</p>
     <div class="reports">
-      <div class="report">
+      <div class="report report-main">
         <h3>Géographie et recherche (P2)</h3>
         <p class="file"><code>MediConnect_Geographie.pbix</code> · 2 pages</p>
         <ul>
           <li><b>Activité et recherches :</b> carte de densité médicale, évolution mensuelle des recherches, couverture des spécialités par ville.</li>
           <li><b>Géographie et accès aux soins :</b> densité par département, spécialités non trouvées selon le rayon de recherche.</li>
         </ul>
-        <div class="thumbs gal">
+        <div class="thumbs">
           <figure class="fig">
-            <button type="button" data-zoom="images/powerbi-recherches.png" data-caption="Page Activité et recherches" aria-label="Agrandir la page Activité et recherches"><img src="images/powerbi-recherches.png" width="2767" height="1600" loading="lazy" decoding="async" alt="Miniature du rapport Power BI, page Activité et recherches"></button>
-            <figcaption>Activité et recherches</figcaption>
+            <button type="button" data-zoom="images/powerbi-recherches.png" data-caption="Page Activité et recherches" aria-label="Agrandir la page Activité et recherches"><img src="images/powerbi-recherches.png" width="2767" height="1600" loading="lazy" decoding="async" alt="Rapport Power BI, page Activité et recherches : carte de densité médicale, top 10 des villes, évolution mensuelle des recherches, répartition par spécialité et couverture des spécialités par ville"></button>
+            <figcaption><b>Activité et recherches.</b> Carte de densité, évolution mensuelle, répartition et couverture des spécialités.</figcaption>
           </figure>
           <figure class="fig">
-            <button type="button" data-zoom="images/powerbi-geographie.png" data-caption="Page Géographie et accès aux soins" aria-label="Agrandir la page Géographie et accès aux soins"><img src="images/powerbi-geographie.png" width="2767" height="1600" loading="lazy" decoding="async" alt="Miniature du rapport Power BI, page Géographie et accès aux soins"></button>
-            <figcaption>Géographie et accès aux soins</figcaption>
+            <button type="button" data-zoom="images/powerbi-geographie.png" data-caption="Page Géographie et accès aux soins" aria-label="Agrandir la page Géographie et accès aux soins"><img src="images/powerbi-geographie.png" width="2767" height="1600" loading="lazy" decoding="async" alt="Rapport Power BI, page Géographie et accès aux soins : densité médicale par département, top 10 des recherches, patients et médecins par ville, spécialités non trouvées par rayon"></button>
+            <figcaption><b>Géographie et accès aux soins.</b> Densité par département, patients et médecins par ville, spécialités non trouvées selon le rayon.</figcaption>
           </figure>
         </div>
       </div>
-      <div class="report">
+      <div class="report report-side">
         <h3>Pipeline d’export partagé</h3>
         <p class="file"><code>export_powerbi.php</code> · <code>generate_pbit.php</code></p>
         <p>Un export CSV commun et un script qui génère le modèle <code>.pbit</code>. Le dashboard du périmètre P4 (stock, commandes, administration, 3 pages) repose sur ce même pipeline.</p>
@@ -508,7 +527,7 @@ footer p+p{margin-top:4px}
 <footer>
   <div class="wrap">
     <div>
-      <p>Étude de cas rédigée par Belva YONTA (périmètres P2 et P3). MediConnect est un projet d’équipe des matières WE4A, SI40 et WE4B, 2026.</p>
+      <p>Étude de cas rédigée par Belva YONTA (périmètres P2 et P3). MediConnect est un projet d’équipe de 2026 (matières WE4A, SI40 et WE4B).</p>
       <p>Les extraits de code viennent du dépôt du projet, privé, dans son état du 13/07/2026.</p>
     </div>
     <a class="btn btn-plain" href="https://kysyb2006.github.io/">← Retour au portfolio</a>
@@ -524,6 +543,11 @@ footer p+p{margin-top:4px}
 <script>
 (function () {
   'use strict';
+
+  /* Code replie sur petit ecran */
+  if (window.matchMedia('(max-width: 720px)').matches) {
+    document.querySelectorAll('details.code-wrap').forEach(function (d) { d.open = false; });
+  }
 
   /* Visionneuse d'images */
   var box = document.getElementById('lightbox');
