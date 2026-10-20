@@ -465,6 +465,64 @@
     h1.title{margin-bottom:16px;}
     .lede{margin-bottom:22px;}
   }
+
+  /* ===== Graphique papillon demande / offre ===== */
+  :root{--bf-d:#1552e0;--bf-o:#0d9488;--bf-room:40px;}
+  [data-theme="dark"]{--bf-d:#3b82f6;--bf-o:#0fa595;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .bf-head,.bf-row,.bf-axis{display:grid;grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr);align-items:center;}
+  .bf-head{margin:6px 0 10px;}
+  .bf-h{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--text);}
+  .bf-h svg{width:20px;height:20px;padding:4px;border-radius:7px;color:#fff;box-sizing:content-box;}
+  .bf-h.d{justify-self:end;padding-right:14px;}
+  .bf-h.d svg{background:var(--bf-d);}
+  .bf-h.o{padding-left:14px;}
+  .bf-h.o svg{background:var(--bf-o);}
+  .bf-rows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;position:relative;}
+  .bf-row{position:relative;min-height:44px;border-radius:10px;transition:background-color .2s var(--ease);}
+  .bf-row:hover{background:var(--surface);}
+  .bf-row.is-gap{background:var(--amber-soft);box-shadow:inset 0 0 0 1px var(--amber-line);}
+  .bf-side{position:relative;display:flex;align-items:center;height:44px;background-origin:content-box;
+    background-image:linear-gradient(var(--border),var(--border)),linear-gradient(var(--border),var(--border));
+    background-repeat:no-repeat;background-size:1px 100%,1px 100%;}
+  .bf-l{justify-content:flex-end;padding-left:var(--bf-room);background-position:50% 0,0 0;}
+  .bf-r{justify-content:flex-start;padding-right:var(--bf-room);background-position:50% 0,100% 0;}
+  .bf-fill.bar-fill{position:relative;display:block;flex:none;height:22px;width:0;overflow:visible;background:var(--bf-d);border-radius:6px 0 0 6px;transition:width 1s var(--ease);}
+  .bf-r .bf-fill.bar-fill{background:var(--bf-o);border-radius:0 6px 6px 0;}
+  .bf-row:hover .bf-fill{filter:none;}
+  .bf-val{position:absolute;top:50%;font-size:15px;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums;line-height:1;transform:translateY(-50%);white-space:nowrap;}
+  .bf-l .bf-val{right:calc(100% + 8px);}
+  .bf-r .bf-val{left:calc(100% + 8px);}
+  .bf-name{text-align:center;font-size:15px;font-weight:700;color:var(--text);padding:0 8px;line-height:1.2;}
+  .bf-row.is-gap .bf-name{color:var(--amber-text-strong);}
+  [data-theme="dark"] .bf-row.is-gap .bf-name{color:var(--amber);}
+  .bf-none{display:inline-flex;align-items:center;gap:7px;margin-left:8px;white-space:nowrap;padding:4px 11px 4px 5px;border-radius:999px;background:var(--surface);border:1px solid var(--amber-line);font-size:14px;font-weight:700;color:var(--amber-text);}
+  .bf-none b{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--amber);color:#fff;font-size:12px;font-weight:800;}
+  [data-theme="dark"] .bf-none b{color:#17120a;}
+  .bf-axis{margin-top:6px;font-size:12px;color:var(--text-faint);font-variant-numeric:tabular-nums;}
+  .bf-ticks{position:relative;height:16px;}
+  .bf-ticks i{position:absolute;font-style:normal;transform:translateX(-50%);}
+  .bf-ticks.l i:nth-child(1){left:var(--bf-room);}.bf-ticks.l i:nth-child(2){left:calc(var(--bf-room) + (100% - var(--bf-room)) / 2);}.bf-ticks.l i:nth-child(3){left:100%;}
+  .bf-ticks.r i:nth-child(1){left:0;}.bf-ticks.r i:nth-child(2){left:calc((100% - var(--bf-room)) / 2);}.bf-ticks.r i:nth-child(3){left:calc(100% - var(--bf-room));}
+  @media (prefers-reduced-motion:reduce){.bf-fill.bar-fill{transition:none;}}
+  @media (max-width:420px){.bf-long{display:none;}}
+  @media (max-width:720px){
+    .bf-head,.bf-axis{grid-template-columns:minmax(0,1fr) 8px minmax(0,1fr);}
+    .bf-h{font-size:13px;gap:6px;}
+    .bf-h svg{width:16px;height:16px;padding:3px;}
+    .bf-h.d{padding-right:4px;}.bf-h.o{padding-left:4px;}
+    .bf-row{grid-template-columns:minmax(0,1fr) 8px minmax(0,1fr);grid-template-areas:"name name name" "l . r";padding:6px 0 2px;}
+    .bf-name{grid-area:name;font-size:14px;padding-bottom:2px;}
+    .bf-l{grid-area:l;}.bf-r{grid-area:r;}
+    .bf-side{height:30px;}
+    .bf-fill.bar-fill{height:16px;}
+    .bf-val{font-size:14px;}
+    .bf-none{margin-left:6px;font-size:13px;}
+    .bf-ticks.r i:first-child{display:none;}
+    .bf-ticks.l i:nth-child(3){left:calc(100% + 4px);}
+    :root{--bf-room:30px;}
+    [data-theme="dark"]{--bf-room:30px;}
+  }
 </style>
 </head>
 <body>
@@ -613,17 +671,44 @@
 
         <div class="insight">
           <div class="insight-head">Ce que les patients cherchent vs. ce que la plateforme propose</div>
-          <div class="insight-sub">search_logs (MongoDB) × référentiel praticiens (MySQL) — même échelle, 6 mois</div>
+          <div class="insight-sub">Par spécialité, sur 6 mois · même échelle des deux côtés</div>
 
-          <div class="pair-key"><span><i class="k-d"></i>Recherches de patients</span><span><i class="k-o"></i>Praticiens référencés</span></div>
-          <div class="tab-panel active pairs">
-            <div class="pair-row is-zero"><div class="bar-label">Dentiste</div><div class="pair-bars"><div class="bar-track"><div class="bar-fill" data-width="100.0%"></div></div><div class="bar-track"><div class="bar-fill offer" data-width="0.0%"></div></div></div><div class="pair-vals"><span>24</span><span class="o">0</span></div></div>
-            <div class="pair-row"><div class="bar-label">Neurologue</div><div class="pair-bars"><div class="bar-track"><div class="bar-fill" data-width="100.0%"></div></div><div class="bar-track"><div class="bar-fill offer" data-width="8.3%"></div></div></div><div class="pair-vals"><span>24</span><span class="o">2</span></div></div>
-            <div class="pair-row"><div class="bar-label">Gynécologue</div><div class="pair-bars"><div class="bar-track"><div class="bar-fill" data-width="87.5%"></div></div><div class="bar-track"><div class="bar-fill offer" data-width="25.0%"></div></div></div><div class="pair-vals"><span>21</span><span class="o">6</span></div></div>
-            <div class="pair-row"><div class="bar-label">Cardiologue</div><div class="pair-bars"><div class="bar-track"><div class="bar-fill" data-width="83.3%"></div></div><div class="bar-track"><div class="bar-fill offer" data-width="29.2%"></div></div></div><div class="pair-vals"><span>20</span><span class="o">7</span></div></div>
-            <div class="pair-row is-zero"><div class="bar-label">Kinésithérapeute</div><div class="pair-bars"><div class="bar-track"><div class="bar-fill" data-width="83.3%"></div></div><div class="bar-track"><div class="bar-fill offer" data-width="0.0%"></div></div></div><div class="pair-vals"><span>20</span><span class="o">0</span></div></div>
-            <div class="pair-row"><div class="bar-label">Généraliste</div><div class="pair-bars"><div class="bar-track"><div class="bar-fill" data-width="58.3%"></div></div><div class="bar-track"><div class="bar-fill offer" data-width="70.8%"></div></div></div><div class="pair-vals"><span>14</span><span class="o">17</span></div></div>
+          <div class="bf-head" aria-hidden="true">
+            <span class="bf-h d"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Recherches de patients</span><span></span><span class="bf-h o"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M4.5 20.5c.9-4 3.8-6 7.5-6s6.6 2 7.5 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Praticiens référencés</span>
           </div>
+          <ul class="tab-panel active bf-rows" aria-label="Recherches et praticiens par spécialité">
+            <li class="bf-row is-gap"><span class="sr-only">Dentiste : 24 recherches, aucun praticien</span>
+              <span class="bf-side bf-l" aria-hidden="true"><span class="bar-fill bf-fill d" data-width="100.0%"><span class="bf-val">24</span></span></span>
+              <span class="bf-name" aria-hidden="true">Dentiste</span>
+              <span class="bf-side bf-r" aria-hidden="true"><span class="bf-none"><b aria-hidden="true">!</b>aucun<span class="bf-long"> praticien</span></span></span>
+            </li>
+            <li class="bf-row"><span class="sr-only">Neurologue : 24 recherches, 2 praticiens</span>
+              <span class="bf-side bf-l" aria-hidden="true"><span class="bar-fill bf-fill d" data-width="100.0%"><span class="bf-val">24</span></span></span>
+              <span class="bf-name" aria-hidden="true">Neurologue</span>
+              <span class="bf-side bf-r" aria-hidden="true"><span class="bar-fill bf-fill o" data-width="8.3%"><span class="bf-val">2</span></span></span>
+            </li>
+            <li class="bf-row"><span class="sr-only">Gynécologue : 21 recherches, 6 praticiens</span>
+              <span class="bf-side bf-l" aria-hidden="true"><span class="bar-fill bf-fill d" data-width="87.5%"><span class="bf-val">21</span></span></span>
+              <span class="bf-name" aria-hidden="true">Gynécologue</span>
+              <span class="bf-side bf-r" aria-hidden="true"><span class="bar-fill bf-fill o" data-width="25.0%"><span class="bf-val">6</span></span></span>
+            </li>
+            <li class="bf-row"><span class="sr-only">Cardiologue : 20 recherches, 7 praticiens</span>
+              <span class="bf-side bf-l" aria-hidden="true"><span class="bar-fill bf-fill d" data-width="83.3%"><span class="bf-val">20</span></span></span>
+              <span class="bf-name" aria-hidden="true">Cardiologue</span>
+              <span class="bf-side bf-r" aria-hidden="true"><span class="bar-fill bf-fill o" data-width="29.2%"><span class="bf-val">7</span></span></span>
+            </li>
+            <li class="bf-row is-gap"><span class="sr-only">Kinésithérapeute : 20 recherches, aucun praticien</span>
+              <span class="bf-side bf-l" aria-hidden="true"><span class="bar-fill bf-fill d" data-width="83.3%"><span class="bf-val">20</span></span></span>
+              <span class="bf-name" aria-hidden="true">Kinésithérapeute</span>
+              <span class="bf-side bf-r" aria-hidden="true"><span class="bf-none"><b aria-hidden="true">!</b>aucun<span class="bf-long"> praticien</span></span></span>
+            </li>
+            <li class="bf-row"><span class="sr-only">Généraliste : 14 recherches, 17 praticiens</span>
+              <span class="bf-side bf-l" aria-hidden="true"><span class="bar-fill bf-fill d" data-width="58.3%"><span class="bf-val">14</span></span></span>
+              <span class="bf-name" aria-hidden="true">Généraliste</span>
+              <span class="bf-side bf-r" aria-hidden="true"><span class="bar-fill bf-fill o" data-width="70.8%"><span class="bf-val">17</span></span></span>
+            </li>
+          </ul>
+          <div class="bf-axis" aria-hidden="true"><span class="bf-ticks l"><i>24</i><i>12</i><i>0</i></span><span></span><span class="bf-ticks r"><i>0</i><i>12</i><i>24</i></span></div>
 
           <div class="insight-callout">
             L'écart saute aux yeux : <b>les deux spécialités les plus recherchées —
